@@ -6,6 +6,7 @@ import Instagram from "../assets/instagram.svg";
 import "../autotyping";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Resume from "../assets/David_Mathew Kawogo-Resume.pdf";
 
 const textAnimate = {
   offScreen: { x: -100, opacity: 0 },
@@ -20,10 +21,7 @@ const textAnimate = {
 
 const Home = () => {
   return (
-    <div
-      className="section-container py-12 md:py-32 bg-gray-50"
-      id="home"
-    >
+    <div className="section-container py-12 md:py-32 bg-gray-50" id="home">
       <div className="flex flex-col items-center md:justify-between md:flex-row">
         <motion.div
           initial={"offScreen"}
@@ -50,21 +48,22 @@ const Home = () => {
           className="h-40 w-40 md:h-72 md:w-72 rounded-full border-2 border-purple-500 order-1 mt-10 md:mt-0"
         />
         <div className="flex gap-3 md:flex-col order-3">
-          <motion.button
-            whileHover= {{ scale: 1.1 }}
+          <motion.a
+            href={Resume}
+            whileHover={{ scale: 1.1 }}
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
-            transition = {{duration: 0.8}}
+            transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.1 }}
             className="mt-5 px-2 py-2 bg-purple-500 border rounded-sm text-white uppercase font-main text-sm"
           >
             Download CV
-          </motion.button>{" "}
+          </motion.a>{" "}
           <motion.a
             whileHover={{ scale: 1.1 }}
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
-            transition = {{duration: 0.8}}
+            transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.1 }}
             href="#my-contacts"
             className="mt-5 px-4 py-2 border border-purple-500 rounded-sm uppercase font-main text-sm"

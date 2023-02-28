@@ -2,6 +2,7 @@ import React from "react";
 import PageTitle from "../components/PageTitle";
 import Profile from "../assets/images/profile.jpg";
 import { motion } from "framer-motion";
+import Resume from "../assets/David_Mathew Kawogo-Resume.pdf";
 
 const leftAnimate = {
   offScreen: { x: -100, opacity: 0 },
@@ -24,7 +25,7 @@ const skillIconAnimate = {
 
 const SkillsExperience = () => {
   return (
-    <div className="section-container py-5 md:py-10" id="my-experience">
+    <div className="section-container py-10 md:py-10" id="my-experience">
       <PageTitle title="skills & experience" />
       <div className="mt-10 flex flex-col md:flex-row md:items-start md:py-32">
         <div className="px-12 md:px-32 flex flex-col gap-2 items-center">
@@ -122,26 +123,30 @@ const SkillsExperience = () => {
               colleges at the university.
             </p>
           </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: false, amount: 0.1 }}
-            className="flex gap-3"
-          >
-            <motion.button
+          <div className="flex gap-3">
+            <motion.a
+              href="#my-contacts"
               whileHover={{ scale: 1.1 }}
-              className="w-32 mt-5 px-4 py-2 bg-purple-500 rounded-sm uppercase font-main text-sm text-white"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: false, amount: 0.1 }}
+              className="w-32 mt-5 px-4 py-2 border border-purple-500 rounded-sm uppercase font-main text-sm"
             >
               let's work
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href={Resume}
               whileHover={{ scale: 1.1 }}
-              className="w-40 mt-5 px-4 py-2 border border-purple-500 rounded-sm uppercase font-main text-sm"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: false, amount: 0.1 }}
+              className="w-40 mt-5 px-4 py-2 bg-purple-500 rounded-sm uppercase font-main text-sm text-white"
             >
               download cv
-            </motion.button>
-          </motion.div>
+            </motion.a>
+          </div>
         </div>
       </div>
     </div>

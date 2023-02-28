@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import PageTitle from "../components/PageTitle";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 const textAnimate = {
   offScreen: { x: -100, opacity: 0 },
@@ -11,8 +12,24 @@ const textAnimate = {
 };
 
 const Contacts = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    
+    emailjs
+      .sendForm("service_0pq5314", "template_ixzm44e", form.current, "uCC2ZY8EycklH3ia2")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
-    <div className="section-container py-5" id="my-contacts">
+    <div className="section-container py-5 bg-gray-50" id="my-contacts">
       <PageTitle title="let's work" />
       <div className="grid md:grid-cols-3 md:justify-between md:py-20 px-4 mx-0">
         <div className="md:col-span-1 flex flex-col gap-2 mt-10 mb-10">
@@ -107,7 +124,14 @@ const Contacts = () => {
           </motion.div>
         </div>
         <div className="md:col-span-2">
-          <form action="" className="">
+          <motion.form
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.1 }}
+            ref={form}
+            onSubmit={sendEmail}
+          >
             <div className="grid md:grid-cols-2 gap-2">
               <div>
                 <label
@@ -138,6 +162,7 @@ const Contacts = () => {
                     id="email-address-icon"
                     class="border border-purple-300 text-gray-900 text-sm rounded-lg focus:outline-purple-500 focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 p-2.5 "
                     placeholder="John Doe"
+                    name="from_name"
                   />
                 </div>
               </div>
@@ -166,6 +191,7 @@ const Contacts = () => {
                     id="email-address-icon"
                     class="border border-purple-300 text-gray-900 text-sm rounded-lg focus:outline-purple-500 focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 p-2.5 "
                     placeholder="name@flowbite.com"
+                    name="user_email"
                   />
                 </div>
               </div>
@@ -179,6 +205,7 @@ const Contacts = () => {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows="4"
                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border focus:outline-purple-500 border-purple-300 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Leave a comment..."
@@ -191,13 +218,14 @@ const Contacts = () => {
               viewport={{ once: false, amount: 0.1 }}
             >
               <motion.button
+                type="submit"
                 whileHover={{ scale: 1.1 }}
                 className="w-32 mt-5 px-4 py-2 bg-purple-500 rounded-sm uppercase font-main text-sm text-white"
               >
                 send
               </motion.button>
             </motion.div>
-          </form>
+          </motion.form>
         </div>
       </div>
     </div>

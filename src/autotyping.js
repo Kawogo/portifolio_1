@@ -119,11 +119,11 @@ var AutoTyping = (function (e) {
 ]).default;
 
 
-const exampleText = ['Web Developer','Graphic Designer' , 'Mobile Developer'];
-const exampleTyping = new AutoTyping('#profession', exampleText, {
-    typeSpeed: 50,
-    deleteSpeed: 50,
-    waitBeforeDelete: 2000,
-    waitBetweenWords: 500,
-});
-exampleTyping.start()
+// const exampleText = ['Web Developer','Graphic Designer' , 'Mobile Developer'];
+// const exampleTyping = new AutoTyping('#profession', exampleText, {
+//     typeSpeed: 50,
+//     deleteSpeed: 50,
+//     waitBeforeDelete: 2000,
+//     waitBetweenWords: 500,
+// });
+// exampleTyping.start()

@@ -21,7 +21,7 @@ const textAnimate = {
 const Home = () => {
   return (
     <div
-      className="section-container py-12 md:py-32 bg-gray-50 h-screen"
+      className="section-container py-12 md:py-32 bg-gray-50"
       id="home"
     >
       <div className="flex flex-col items-center md:justify-between md:flex-row">
@@ -36,7 +36,7 @@ const Home = () => {
             Hello, am David...
           </h4>
           <h1 className="text-4xl md:text-2xl font-main font-bold" id="">
-            Web Developer y
+            Web Developer
           </h1>
         </motion.div>
         <motion.img
@@ -51,9 +51,9 @@ const Home = () => {
         />
         <div className="flex gap-3 md:flex-col order-3">
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            initial={{ x: 100 }}
-            whileInView={{ x: 0 }}
+            whileHover= {{ scale: 1.1 }}
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
             transition = {{duration: 0.8}}
             viewport={{ once: false, amount: 0.1 }}
             className="mt-5 px-2 py-2 bg-purple-500 border rounded-sm text-white uppercase font-main text-sm"
@@ -62,9 +62,9 @@ const Home = () => {
           </motion.button>{" "}
           <motion.a
             whileHover={{ scale: 1.1 }}
-            initial={{ x: 100 }}
-            whileInView={{ x: 0 }}
-            transition = {{duration: 1}}
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition = {{duration: 0.8}}
             viewport={{ once: false, amount: 0.1 }}
             href="#my-contacts"
             className="mt-5 px-4 py-2 border border-purple-500 rounded-sm uppercase font-main text-sm"

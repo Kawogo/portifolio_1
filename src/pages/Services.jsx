@@ -201,29 +201,6 @@ const Services = () => {
           </div>
         </motion.div>
       </div>
-      <div className="flex flex-col items-center md:items-start order-2 md:order-1 mt-10 md:mt-10">
-        <a
-          href="#my-works"
-          id=""
-          className="flex items-center border-2 border-purple-500 rounded-t-xl rounded-b-xl w-6 h-8 cursor-pointer animate-bounce"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"
-            />
-          </svg>
-        </a>
-        <p className="font-main text-sm capitalize flex mt-3">check my works</p>
-      </div>
     </div>
   );
 };

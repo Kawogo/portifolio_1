@@ -103,12 +103,12 @@ const SkillsExperience = () => {
         </div>
         <div className="flex flex-col gap-3 mt-10 md:mt-0 p-5 items-center">
           <motion.div
-           initial = {{x: 100}}
-           whileInView={{ x: 0}}
-           transition = {{duration: 1}}
-           viewport={{ once: false, amount: 0.1 }}
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1.1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
-            <p className="font-para font-bold text-sm md:text-md text-center">
+            <p className="font-para font-bold mb-4 text-sm md:text-md text-center">
               Hello, my name is David from Dar-es-salaam, Tanzania, I am a
               creative full stack web developer with about 4 years of
               experience. My first job is to listen to what you need and put
@@ -122,45 +122,27 @@ const SkillsExperience = () => {
               colleges at the university.
             </p>
           </motion.div>
-          <motion.div 
-          initial = {{y: 100, opacity: 0}}
-          whileInView = {{y: 0 , opacity: 1}}
-          transition = {{duration: 0.9}}
-          viewport={{ once: false, amount: 0.1 }}
-          className="flex gap-3">
-            <motion.button whileHover={{ scale: 1.1 }} className="w-32 mt-5 px-4 py-2 bg-purple-500 rounded-sm uppercase font-main text-sm text-white">
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ once: false, amount: 0.1 }}
+            className="flex gap-3"
+          >
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              className="w-32 mt-5 px-4 py-2 bg-purple-500 rounded-sm uppercase font-main text-sm text-white"
+            >
               let's work
             </motion.button>
-            <motion.button whileHover={{ scale: 1.1 }} className="w-40 mt-5 px-4 py-2 border border-purple-500 rounded-sm uppercase font-main text-sm">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              className="w-40 mt-5 px-4 py-2 border border-purple-500 rounded-sm uppercase font-main text-sm"
+            >
               download cv
             </motion.button>
           </motion.div>
         </div>
-      </div>
-      <div className="flex flex-col items-center md:items-start order-2 md:order-1 mt-10 md:mt-10">
-        <a
-          href="#my-services"
-          id=""
-          className="flex items-center border-2 border-purple-500 rounded-t-xl rounded-b-xl w-6 h-8 cursor-pointer animate-bounce"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"
-            />
-          </svg>
-        </a>
-        <p className="font-main text-sm capitalize flex mt-3">
-          check my services
-        </p>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ const Home = () => {
             Hello, am David...
           </h4>
           <h1 className="text-4xl md:text-2xl font-main font-bold" id="">
-            Web Developer
+            Web Developer y
           </h1>
         </motion.div>
         <motion.img

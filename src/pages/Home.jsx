@@ -62,7 +62,9 @@ const Home = () => {
           </motion.button>{" "}
           <motion.a
             whileHover={{ scale: 1.1 }}
-            whileInView={{ scale: 0.9 }}
+            initial={{ x: 100 }}
+            whileInView={{ x: 0 }}
+            transition = {{duration: 1}}
             viewport={{ once: false, amount: 0.1 }}
             href="#my-contacts"
             className="mt-5 px-4 py-2 border border-purple-500 rounded-sm uppercase font-main text-sm"

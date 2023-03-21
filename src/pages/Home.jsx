@@ -2,7 +2,7 @@ import React from "react";
 import Profile from "../assets/images/profile.jpg";
 import Twitter from "../assets/twitter.svg";
 import Linkedin from "../assets/linkedin.svg";
-import Instagram from "../assets/instagram.svg";
+import Github from "../assets/github.svg";
 import "../autotyping";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -31,9 +31,9 @@ const Home = () => {
           className="flex flex-col items-center md:items-start order-2 md:order-1 mt-5"
         >
           <h4 className="text-sm text-semibold font-main">
-            Hello, am David...
+            Hello, my name is David and i am a...
           </h4>
-          <h1 className="text-4xl md:text-2xl font-main font-bold" id="">
+          <h1 className="text-4xl md:text-4xl font-main font-bold" id="">
             Web Developer
           </h1>
         </motion.div>
@@ -99,24 +99,42 @@ const Home = () => {
           </p>
         </div>
         <div className="flex gap-1 order-1 md:order-2 md:animate-bounce">
-          <img
-            src={Twitter}
-            alt=""
-            srcset=""
-            className="h-7 w-7 cursor-pointer"
-          />
-          <img
-            src={Instagram}
-            alt=""
-            srcset=""
-            className="h-7 w-7 cursor-pointer"
-          />
-          <img
-            src={Linkedin}
-            alt=""
-            srcset=""
-            className="h-7 w-7 rounded-full cursor-pointer"
-          />
+          <a
+            href="https://twitter.com/kawogo_david"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={Twitter}
+              alt=""
+              srcset=""
+              className="h-7 w-7 cursor-pointer"
+            />
+          </a>
+          <a
+            href="https://github.com/Kawogo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={Github}
+              alt=""
+              srcset=""
+              className="h-7 w-7 cursor-pointer"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/david-kawogo-4066a01a6/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={Linkedin}
+              alt=""
+              srcset=""
+              className="h-7 w-7 rounded-full cursor-pointer"
+            />
+          </a>
         </div>
       </div>
     </div>

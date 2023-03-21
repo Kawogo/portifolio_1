@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import PageTitle from "../components/PageTitle";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -13,14 +13,21 @@ const textAnimate = {
 
 const Contacts = () => {
   const form = useRef();
+  const [sendingEmail, setSendingEmail] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
-    
+    setSendingEmail(true);
     emailjs
-      .sendForm("service_0pq5314", "template_ixzm44e", form.current, "uCC2ZY8EycklH3ia2")
+      .sendForm(
+        "service_0pq5314",
+        "template_ixzm44e",
+        form.current,
+        "uCC2ZY8EycklH3ia2"
+      )
       .then(
         (result) => {
+          setSendingEmail(false);
           console.log(result.text);
         },
         (error) => {
@@ -123,15 +130,32 @@ const Contacts = () => {
             </p>
           </motion.div>
         </div>
-        <div className="md:col-span-2">
-          <motion.form
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.1 }}
-            ref={form}
-            onSubmit={sendEmail}
-          >
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.1 }}
+          className="md:col-span-2 bg-white p-5 border shadow-lg rounded-md"
+        >
+          <h1 className="capitalize font-semibold flex items-center gap-2 mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+              />
+            </svg>
+            Send me a message
+          </h1>
+          <hr />
+          <form ref={form} onSubmit={sendEmail} className="mt-3">
             <div className="grid md:grid-cols-2 gap-2">
               <div>
                 <label
@@ -211,12 +235,7 @@ const Contacts = () => {
                 placeholder="Leave a comment..."
               ></textarea>
             </div>
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: false, amount: 0.1 }}
-            >
+            <div>
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.1 }}
@@ -224,9 +243,9 @@ const Contacts = () => {
               >
                 send
               </motion.button>
-            </motion.div>
-          </motion.form>
-        </div>
+            </div>
+          </form>
+        </motion.div>
       </div>
     </div>
   );
